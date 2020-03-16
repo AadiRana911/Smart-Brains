@@ -43,6 +43,7 @@ class App extends Component {
     }
   }
 
+
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
@@ -83,7 +84,7 @@ class App extends Component {
   }
 
   render(){
-    const { input, imageUrl, box, route, isSignedIn } = this.state;
+    const { imageUrl, box, route, isSignedIn } = this.state;
     return (
       <div className="App">
         <Particles
@@ -103,11 +104,6 @@ class App extends Component {
               ? <Signin onRouteChange = { this.onRouteChange } />
               : <Register onRouteChange = { this.onRouteChange } />
           ) 
-
-           
-           
-          
-            
         }
         
       </div>
